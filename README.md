@@ -2,7 +2,9 @@
 
 This project is an example of how a react project can be instrumented with the scope agent.
 
-#### Configuration
+For more information please refer to the documentation at [https://docs.scope.dev/docs/javascript-installation](https://docs.scope.dev/docs/javascript-installation).
+
+## Usage
 
 Checkout the repository:
 
@@ -10,7 +12,7 @@ Checkout the repository:
 git checkout git@github.com:scope-demo/scope-javascript-react-starter.git
 ```
 
-Go to the repository directory:
+Change to the repository directory:
 
 ```bash
 cd scope-javascript-react-starter
@@ -25,6 +27,14 @@ yarn
 Set your `SCOPE_API_ENDPOINT` and `SCOPE_APIKEY` in `cypress.env.json` and `.env.test`.
 
 > Please note that these are secrets and should _not_ be part of your repository.
+
+You may also pass these as environment variables when running your tests.
+
+For example:
+
+```bash
+SCOPE_API_ENDPOINT=${SCOPE_API_ENDPOINT} SCOPE_APIKEY=${SCOPE_APIKEY} yarn test
+```
 
 Run your unit and integration tests:
 
