@@ -9,8 +9,10 @@ For more information please refer to the documentation at [https://docs.scope.de
 Checkout the repository:
 
 ```bash
-git checkout git@github.com:scope-demo/scope-javascript-react-starter.git
+git clone git@github.com:scope-demo/scope-javascript-react-starter.git
 ```
+
+> Alternatively, you may use the `Use this template` button in GitHub.
 
 Change to the repository directory:
 
