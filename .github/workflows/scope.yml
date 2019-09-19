@@ -12,11 +12,14 @@ jobs:
         uses: actions/setup-node@v1
       - name: Install dependencies
         run: yarn
+      - name: Start app
+        run: yarn start &
       - name: Run Jest tests
         run: yarn test --runInBand
         env:
           SCOPE_APIKEY: ${{secrets.SCOPE_APIKEY}}
+          CI: true
       - name: Run Cypress tests
-        run: yarn cypress:run
+        run: yarn cypress:run --env SCOPE_APIKEY=${SCOPE_APIKEY},SCOPE_API_ENDPOINT=https://app.scope.dev
         env:
           SCOPE_APIKEY: ${{secrets.SCOPE_APIKEY}}
