@@ -1,59 +1,29 @@
-# Scope Javascript Agent React Starter Project
+# Scope: Getting Started
 
-This project is an example of how a react project can be instrumented with the scope agent.
+An starter React project instrumented with Scope through GitHub Actions.
+
+This starter project is based on:
+
+- [Create React App](https://github.com/facebook/create-react-app)
+
+## How it works
+
+This project is based on Create React App and includes unit tests run by [Jest](https://jestjs.io/) and end to end tests run by [Cypress](https://www.cypress.io/. It also adds the necessary configuration to run the Javascript Scope Agent.
 
 For more information please refer to the documentation at [https://docs.scope.dev/docs/javascript-installation](https://docs.scope.dev/docs/javascript-installation).
 
-## Usage
+## Running Scope on GitHub Actions
 
-Checkout the repository:
+1. Click on `Use this template` button and create the repository in your namespace.
+2. Access to [app.scope.dev](https://app.scope.dev).
+3. Add/Modify your namespace to include your new repository.
+4. Get the API Key for your new repository.
+5. Go to your repository on GitHub.
+6. Go to Settings -> Secrets.
+7. Add your API Key secret.
 
-```bash
-git clone git@github.com:scope-demo/scope-javascript-react-starter.git
-```
+- Name: `SCOPE_APIKEY`
+- Value: `<<your APIKEY>>`
 
-> Alternatively, you may use the `Use this template` button in GitHub.
-
-Change to the repository directory:
-
-```bash
-cd scope-javascript-react-starter
-```
-
-Install dependencies:
-
-```bash
-yarn
-```
-
-Set your `SCOPE_API_ENDPOINT` and `SCOPE_APIKEY` in `cypress.env.json` and `.env.test`.
-
-> Please note that these are secrets and should _not_ be part of your repository.
-
-You may also pass these as environment variables when running your tests.
-
-For example:
-
-```bash
-SCOPE_API_ENDPOINT=${SCOPE_API_ENDPOINT} SCOPE_APIKEY=${SCOPE_APIKEY} yarn test
-```
-
-Run your unit and integration tests:
-
-```bash
-yarn test
-```
-
-Run your E2E tests:
-
-- Start your application:
-
-```bash
-yarn start
-```
-
-- Run cypress:
-
-```bash
-yarn cypress:run
-```
+8. Click on `Actions` button and access to the workflow.
+9. Click on `Re-run checks`.
