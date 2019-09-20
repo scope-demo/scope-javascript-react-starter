@@ -18,6 +18,7 @@ jobs:
         run: yarn test --runInBand
         env:
           SCOPE_APIKEY: ${{secrets.SCOPE_APIKEY}}
+          SCOPE_API_ENDPOINT: https://app.scope.dev
           CI: true
       - name: Run Cypress tests
         run: yarn cypress:run --env SCOPE_APIKEY=${SCOPE_APIKEY},SCOPE_API_ENDPOINT=https://app.scope.dev
