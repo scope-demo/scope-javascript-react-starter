@@ -1,5 +1,4 @@
 {
-  "baseUrl": "http://localhost:3001",
-  "fixturesFolder": false,
-  "chromeWebSecurity": false
+  "baseUrl": "http://localhost:3000",
+  "fixturesFolder": false
 }
