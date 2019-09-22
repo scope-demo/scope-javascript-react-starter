@@ -1,0 +1,26 @@
+name: Scope Javascript React Starter
+on: [push]
+
+jobs:
+  scope:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if SCOPE_APIKEY is set
+        run: if [ "${{secrets.SCOPE_APIKEY}}" = "" ]; then exit 1; fi
+      - uses: actions/checkout@v1
+      - name: Set up Node
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: yarn
+      - name: Start app
+        run: yarn start &
+      - name: Run Jest tests
+        run: yarn test --runInBand
+        env:
+          SCOPE_APIKEY: ${{secrets.SCOPE_APIKEY}}
+          SCOPE_API_ENDPOINT: https://app.scope.dev
+          CI: true
+      - name: Run Cypress tests
+        run: yarn cypress:run --env SCOPE_APIKEY=${SCOPE_APIKEY},SCOPE_API_ENDPOINT=https://app.scope.dev
+        env:
+          SCOPE_APIKEY: ${{secrets.SCOPE_APIKEY}}
