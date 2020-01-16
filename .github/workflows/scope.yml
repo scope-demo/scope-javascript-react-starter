@@ -3,24 +3,17 @@ name: Scope Javascript React Starter
 on: [push]
 
 jobs:
-  build:
+  scope:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
 
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm install
       - name: Scope for Javascript
         uses: undefinedlabs/scope-for-javascript-action@v1
         with:
-          # Scope DSN
           command: yarn test
           command-browser: yarn cypress:run
