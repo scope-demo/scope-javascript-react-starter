@@ -17,14 +17,14 @@ For more information please refer to the documentation at [https://docs.scope.de
 1. Click on `Use this template` button and create the repository in your namespace.
 2. Access to [app.scope.dev](https://app.scope.dev).
 3. Add/Modify your namespace to include your new repository.
-4. Get the API Key for your new repository.
+4. Get the `SCOPE_DSN` for your new repository.
 5. Go to your repository on GitHub.
 6. Sign up for [GitHub Actions](https://github.com/features/actions) if you have not already done so.
 7. Go to `Settings` -> `Secrets`.
-8. Add your API Key secret.
+8. Add your `SCOPE_DSN` secret.
 
-- Name: `SCOPE_APIKEY`
-- Value: `<<your APIKEY>>`
+- Name: `SCOPE_DSN`
+- Value: `<<your SCOPE_DSN>>`
 
 9. Click on `Actions` button and access to the workflow.
 10. Click on `Re-run checks`.

@@ -1,5 +1,3 @@
-import { initializeCypress } from "@undefinedlabs/scope-agent";
+import "@undefinedlabs/scope-agent/cypress/support";
 
 import "./commands";
-
-initializeCypress();
