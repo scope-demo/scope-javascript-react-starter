@@ -12,7 +12,7 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Start app
-        run: yarn start
+        run: yarn start &
       - name: Scope for Javascript
         uses: undefinedlabs/scope-for-javascript-action@v1
         with:
