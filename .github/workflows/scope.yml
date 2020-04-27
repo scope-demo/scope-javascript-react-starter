@@ -5,15 +5,18 @@ on: [push]
 jobs:
   scope:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js
         uses: actions/setup-node@v1
       - name: Install dependencies
         run: yarn
+      - name: Start app
+        run: yarn start
       - name: Scope for Javascript
         uses: undefinedlabs/scope-for-javascript-action@v1
         with:
-          command: yarn test
-          command-browser: yarn cypress:run
+          dsn: ${{secrets.SCOPE_DSN}}
+          jest-command: yarn test
+          cypress-command: yarn cypress:run
+          cypress-endpoint: http://localhost:3000
